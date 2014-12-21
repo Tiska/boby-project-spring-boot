@@ -32,17 +32,22 @@ public class ClientController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/add", method = GET)
+    @RequestMapping(value = "/add", method = POST)
     public @ResponseBody
-//    DeferredResult<ClientResponse> addContact(@Valid @RequestBody ClientRequest request) {
-    DeferredResult<ClientResponse> addContact(@RequestParam String name) {
+    DeferredResult<ClientResponse> addContact(@Valid @RequestBody ClientRequest request) {
 
         DeferredResult<ClientResponse> result = new TiskaDeferredResult<>();
 
 //        GeneratorRuntime.getGeneratorRuntime().executeTransaction(() -> {
             Client client = Client.create();
-            client.setNom(name);
-            client.setPrenom(name);
+            client.setNom(request.getNom());
+            client.setPrenom(request.getPrenom());
+            client.setAdresse(request.getAdresse());
+            client.setBirthday(request.getBirthday());
+            client.setCodePostal(request.getCodePostal());
+            client.setTelephone(request.getTelephone());
+            client.setEmail(request.getEmail());
+            client.setVille(request.getVille());
             client.save().subscribe();
             result.setResult(new ClientResponse(client.getId()));
 

@@ -2,6 +2,7 @@ package controllers;
 
 import api.TiskaDeferredResult;
 import controllers.request.ClientRequest;
+import controllers.response.ClientListResponse;
 import controllers.response.ClientResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,6 +14,9 @@ import persistence.beans.biz.Client;
 import javax.validation.Valid;
 import javax.ws.rs.PathParam;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
@@ -21,7 +25,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
  */
 
 @RestController
-@RequestMapping("/client/")
+@RequestMapping("/services/client")
 public class ClientController {
 
     private static Logger logger = LoggerFactory.getLogger(ClientController.class);
@@ -32,7 +36,7 @@ public class ClientController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/add", method = POST)
+    @RequestMapping(value = "/", method = POST)
     public @ResponseBody
     DeferredResult<ClientResponse> addContact(@Valid @RequestBody ClientRequest request) {
 
@@ -49,7 +53,41 @@ public class ClientController {
             client.setEmail(request.getEmail());
             client.setVille(request.getVille());
             client.save().subscribe();
-            result.setResult(new ClientResponse(client.getId()));
+            logger.info("création du client "+client.getId());
+            result.setResult(new ClientResponse(client.getId(),request.getNom(),request.getPrenom()));
+
+//        });
+
+        return result;
+    }
+
+    /**
+     * liste des contacts
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/list", method = GET)
+    public @ResponseBody
+    DeferredResult<ClientListResponse> getContacts() {
+
+        DeferredResult<ClientListResponse> result = new TiskaDeferredResult<>();
+
+//        GeneratorRuntime.getGeneratorRuntime().executeTransaction(() -> {
+        List<ClientResponse> clients = new ArrayList<>();
+
+        Client.getList().subscribe(list -> {
+            if (list != null && !list.isEmpty()) {
+                for (Client cl : list) {
+                    ClientResponse resp = new ClientResponse(cl.getId(),cl.getNom(),cl.getPrenom());
+                    clients.add(resp);
+                }
+            }
+        });
+
+        logger.info(clients.size()+" clients trouvés");
+
+        result.setResult(new ClientListResponse(clients));
 
 //        });
 

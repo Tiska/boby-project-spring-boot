@@ -1,17 +1,35 @@
 package controllers.request;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import json.JsonDateTimeDeserializer;
+import json.JsonDateTimeSerializer;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotEmpty;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 /**
  * Created by Tiska on 20/12/2014.
  */
 public class ClientRequest {
+
+    @NotEmpty(message = "Invalid name")
+    @NotNull(message = "Invalid name")
+    @Length(max = 45)
     private String nom;
+    @NotEmpty(message = "Invalid surname")
+    @NotNull(message = "Invalid surname")
+    @Length(max = 45)
     private String prenom;
     private Integer telephone;
     private String adresse;
     private String codePostal;
     private String ville;
+    @JsonSerialize(using = JsonDateTimeSerializer.class)
+    @JsonDeserialize(using = JsonDateTimeDeserializer.class)
     private LocalDateTime birthday;
     private String email;
 

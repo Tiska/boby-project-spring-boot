@@ -7,9 +7,13 @@ import api.ApiResponse;
  */
 public class ClientResponse extends ApiResponse {
     private long id;
+    private String nom;
+    private String prenom;
 
-    public ClientResponse(long id) {
+    public ClientResponse(long id, String nom, String prenom) {
         this.id = id;
+        this.nom = nom;
+        this.prenom = prenom;
     }
 
     public long getId() {
@@ -18,5 +22,21 @@ public class ClientResponse extends ApiResponse {
 
     public void setId(long id) {
         this.id = id;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
 }

@@ -1,0 +1,11 @@
+endpoints:
+    shutdown:
+        enabled: true
+        
+management:
+    port: 6666
+
+server:
+    port: 5555
+
+       

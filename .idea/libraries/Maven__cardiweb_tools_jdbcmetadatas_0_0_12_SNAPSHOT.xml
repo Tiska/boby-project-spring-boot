@@ -1,0 +1,13 @@
+<component name="libraryTable">
+  <library name="Maven: cardiweb-tools:jdbcmetadatas:0.0.12-SNAPSHOT">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/cardiweb-tools/jdbcmetadatas/0.0.12-SNAPSHOT/jdbcmetadatas-0.0.12-20141208.110137-19.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$MAVEN_REPOSITORY$/cardiweb-tools/jdbcmetadatas/0.0.12-SNAPSHOT/jdbcmetadatas-0.0.12-20141208.110137-19-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$MAVEN_REPOSITORY$/cardiweb-tools/jdbcmetadatas/0.0.12-SNAPSHOT/jdbcmetadatas-0.0.12-20141208.110137-19-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

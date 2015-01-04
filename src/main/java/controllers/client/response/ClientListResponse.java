@@ -1,4 +1,4 @@
-package controllers.response;
+package controllers.client.response;
 
 import api.ApiResponse;
 

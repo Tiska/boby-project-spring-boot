@@ -1,4 +1,4 @@
-package controllers.request;
+package controllers.client.request;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
@@ -7,7 +7,6 @@ import json.JsonDateTimeSerializer;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 

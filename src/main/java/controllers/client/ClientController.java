@@ -1,18 +1,16 @@
-package controllers;
+package controllers.client;
 
 import api.TiskaDeferredResult;
-import controllers.request.ClientRequest;
-import controllers.response.ClientListResponse;
-import controllers.response.ClientResponse;
+import controllers.client.request.ClientRequest;
+import controllers.client.response.ClientListResponse;
+import controllers.client.response.ClientResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.async.DeferredResult;
-import persistence.GeneratorRuntime;
 import persistence.beans.biz.Client;
 
 import javax.validation.Valid;
-import javax.ws.rs.PathParam;
 
 import java.util.ArrayList;
 import java.util.List;

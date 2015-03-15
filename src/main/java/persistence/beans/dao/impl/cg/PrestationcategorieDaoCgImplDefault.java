@@ -423,25 +423,35 @@ public abstract class PrestationcategorieDaoCgImplDefault implements IPrestation
 			synchronized(getCache()) {
 				Object r = getCache().getByKey(___key);
 				if (r==com.cardiweb.generator.persistence.runtimev3.GeneratorRuntime.getNotFound()) {
-					subscriber.onNext(null);
-					subscriber.onCompleted();
+					if (!subscriber.isUnsubscribed()) {
+						subscriber.onNext(null);
+						subscriber.onCompleted();
+					}
 					return;
 				} else
 				if (r==null) {
 					r = newQuery().equal(PRESTATIONCATEGORIE_COLUMNS.id, id)	.getObject().subscribe(obj -> {
-						if (obj == null) {
-							getCache().putByKey(___key, com.cardiweb.generator.persistence.runtimev3.GeneratorRuntime.getNotFound());
-						} else {
-							getCache().putByKey(___key, obj);
+						try {
+							if (obj == null) {
+								getCache().putByKey(___key, com.cardiweb.generator.persistence.runtimev3.GeneratorRuntime.getNotFound());
+							} else {
+								getCache().putByKey(___key, obj);
+							}
+							if (!subscriber.isUnsubscribed()) {
+								subscriber.onNext(obj);
+							}
+						} finally {
+							if (!subscriber.isUnsubscribed()) {
+								subscriber.onCompleted();
+							}
 						}
-						subscriber.onNext(obj);
-						subscriber.onCompleted();
-						
 					});
 					
 				} else {
-					subscriber.onNext((persistence.beans.dao.IPrestationcategorieTo) r);
-					subscriber.onCompleted();
+					if (!subscriber.isUnsubscribed()) {
+						subscriber.onNext((persistence.beans.dao.IPrestationcategorieTo) r);
+						subscriber.onCompleted();
+					}
 				}
 			}
 		})
@@ -493,8 +503,16 @@ public abstract class PrestationcategorieDaoCgImplDefault implements IPrestation
 				clearListCache();
 				obj.setNew(false);
 				obj.clearLocalCache();
+				
+				if (!subscriber.isUnsubscribed()) {
+					subscriber.onNext(null);
+				}
 			} catch (Exception e) {
 				throw new RuntimeException("Erreur lors de la sauvegarde de l'objet "+obj.getCacheKey(), e);
+			} finally {
+				if (!subscriber.isUnsubscribed()) {
+					subscriber.onCompleted();
+				}
 			}
 		})
 		.subscribeOn(getGeneratorRuntime().getSubscribeOnScheduler())
@@ -553,8 +571,16 @@ public abstract class PrestationcategorieDaoCgImplDefault implements IPrestation
 				getCache().removeByKey(obj.getCacheKey());
 				obj.clearLocalCache();
 				clearListCache();
+				
+				if (!subscriber.isUnsubscribed()) {
+					subscriber.onNext(null);
+				}
 			} catch (Exception e) {
 				throw new RuntimeException("Erreur lors de la suppression de l'objet "+obj.getCacheKey(), e);
+			} finally {
+				if (!subscriber.isUnsubscribed()) {
+					subscriber.onCompleted();
+				}
 			}
 		})
 		.subscribeOn(getGeneratorRuntime().getSubscribeOnScheduler())

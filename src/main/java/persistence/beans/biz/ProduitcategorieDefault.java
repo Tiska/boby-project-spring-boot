@@ -66,29 +66,11 @@ public abstract class ProduitcategorieDefault {
 	}
 	
 	public Observable<Void> delete() {
-		return Observable
-		.create((OnSubscribe<Void>) subscriber -> {
-			getDao().delete(_to).subscribe();
-			if (!subscriber.isUnsubscribed()) {
-				subscriber.onNext(null);
-				subscriber.onCompleted();
-			}
-		})
-		.observeOn(getGeneratorRuntime().getObserveOnScheduler())
-		.subscribeOn(getGeneratorRuntime().getSubscribeOnScheduler());
+		return getDao().delete(_to);
 	}
 	
 	public Observable<Void> save() {
-		return Observable
-		.create((OnSubscribe<Void>) subscriber -> {
-			getDao().save(_to).subscribe();
-			if (!subscriber.isUnsubscribed()) {
-				subscriber.onNext(null);
-				subscriber.onCompleted();
-			}
-		})
-		.observeOn(getGeneratorRuntime().getObserveOnScheduler())
-		.subscribeOn(getGeneratorRuntime().getSubscribeOnScheduler());
+		return getDao().save(_to);
 	}
 	
 	public static Produitcategorie create() {

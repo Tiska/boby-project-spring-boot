@@ -88,7 +88,7 @@
     <orderEntry type="library" name="Maven: cardiweb-cpersistence:cpersistence-rx-runtime:1.2.37-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: cardiweb-tools:clazylist:0.0.3" level="project" />
     <orderEntry type="library" name="Maven: cardiweb-tools:java6compliance:0.0.1" level="project" />
-    <orderEntry type="library" name="Maven: io.reactivex:rxjava:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: io.reactivex:rxjava:1.0.4" level="project" />
     <orderEntry type="library" name="Maven: cardiweb-cpersistence:cpersistence-rx-generator:1.2.37-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: cardiweb-tools:jdbcmetadatas:0.0.12-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: cardiweb-tools:cgenerator:0.0.8" level="project" />

@@ -4,12 +4,11 @@ import api.TiskaDeferredResult;
 import controllers.produit.request.ProduitCategorieRequest;
 import controllers.produit.response.ProduitCategorieListResponse;
 import controllers.produit.response.ProduitCategorieResponse;
+import controllers.produit.response.ProduitListResponse;
+import controllers.produit.response.ProduitResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.async.DeferredResult;
 import persistence.beans.biz.Prestationcategorie;
 import persistence.beans.biz.Produit;
@@ -83,6 +82,39 @@ public class ProduitController {
         logger.info(categories.size()+" categories trouvés");
 
         result.setResult(new ProduitCategorieListResponse(categories));
+
+//        });
+
+        return result;
+    }
+
+    /**
+     * liste des produits par catégorie
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/produit/list/byCategorie/{idCategorie}", method = GET)
+    public @ResponseBody
+    DeferredResult<ProduitListResponse> getProduitsByCategorie(@PathVariable("idCategorie") long idCategorie) {
+
+        DeferredResult<ProduitListResponse> result = new TiskaDeferredResult<>();
+
+//        GeneratorRuntime.getGeneratorRuntime().executeTransaction(() -> {
+        List<ProduitResponse> produits = new ArrayList<>();
+
+        Produit.getProduitListParIdProduitCateg(idCategorie).subscribe(list -> {
+            if (list != null && !list.isEmpty()) {
+                for (Produit prod : list) {
+                    ProduitResponse resp = new ProduitResponse(prod.getId(), prod.getLibelle(), prod.getStock());
+                    produits.add(resp);
+                }
+            }
+        });
+
+        logger.info(produits.size()+" produits trouvés");
+
+        result.setResult(new ProduitListResponse(produits));
 
 //        });
 

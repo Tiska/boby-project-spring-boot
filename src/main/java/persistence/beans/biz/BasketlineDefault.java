@@ -66,29 +66,11 @@ public abstract class BasketlineDefault {
 	}
 	
 	public Observable<Void> delete() {
-		return Observable
-		.create((OnSubscribe<Void>) subscriber -> {
-			getDao().delete(_to).subscribe();
-			if (!subscriber.isUnsubscribed()) {
-				subscriber.onNext(null);
-				subscriber.onCompleted();
-			}
-		})
-		.observeOn(getGeneratorRuntime().getObserveOnScheduler())
-		.subscribeOn(getGeneratorRuntime().getSubscribeOnScheduler());
+		return getDao().delete(_to);
 	}
 	
 	public Observable<Void> save() {
-		return Observable
-		.create((OnSubscribe<Void>) subscriber -> {
-			getDao().save(_to).subscribe();
-			if (!subscriber.isUnsubscribed()) {
-				subscriber.onNext(null);
-				subscriber.onCompleted();
-			}
-		})
-		.observeOn(getGeneratorRuntime().getObserveOnScheduler())
-		.subscribeOn(getGeneratorRuntime().getSubscribeOnScheduler());
+		return getDao().save(_to);
 	}
 	
 	public static Basketline create() {
@@ -154,6 +136,9 @@ public abstract class BasketlineDefault {
 	 */
 	
 	public Observable<Optional<persistence.beans.biz.Prestation>> getPrestation() {
+		if(getTo(false).getIdPrestation() == null){
+			return Observable.just(Optional.empty());
+		}
 		return persistence.beans.biz.Prestation.getPrestation(getTo(false).getIdPrestation());
 	}
 	
@@ -175,6 +160,9 @@ public abstract class BasketlineDefault {
 	 */
 	
 	public Observable<Optional<persistence.beans.biz.Produit>> getProduit() {
+		if(getTo(false).getIdProduit() == null){
+			return Observable.just(Optional.empty());
+		}
 		return persistence.beans.biz.Produit.getProduit(getTo(false).getIdProduit());
 	}
 	

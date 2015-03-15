@@ -60,7 +60,7 @@ public class BobiPersistenceGenerator extends PersistenceGenerator {
 		generator.setBasePackage("persistence.beans");
 		generator.setGeneratorPackage("persistence");
 		// generator.setDb("org.postgresql.Driver", "jdbc:postgresql://127.0.0.1:5432/jordan", "postgres", "root");
-		generator.setDb("com.mysql.jdbc.Driver", "jdbc:mysql://127.0.0.1:3306/boby-database", "tiska", "tiskabreaker");
+		generator.setDb("com.mysql.jdbc.Driver", "jdbc:mysql://127.0.0.1:3306/boby-database", "root", "1687f9b5");
 		generator.generate();
 	}
 

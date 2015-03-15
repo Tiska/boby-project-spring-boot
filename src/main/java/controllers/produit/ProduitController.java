@@ -94,7 +94,7 @@ public class ProduitController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "/produit/list/byCategorie/{idCategorie}", method = GET)
+    @RequestMapping(value = "/list/byCategorie/{idCategorie}", method = GET)
     public @ResponseBody
     DeferredResult<ProduitListResponse> getProduitsByCategorie(@PathVariable("idCategorie") long idCategorie) {
 

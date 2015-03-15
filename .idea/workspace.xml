@@ -2,58 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="e42de3d3-421c-44ff-abc9-37eea077864d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/api/ApiInvoker$1.class" afterPath="$PROJECT_DIR$/target/classes/api/ApiInvoker$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/api/ApiInvoker.class" afterPath="$PROJECT_DIR$/target/classes/api/ApiInvoker.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/BasketDaoCgImplDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/BasketDaoCgImplDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/BasketDefault$BasketLazyListLoader.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/BasketDefault$BasketLazyListLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/BasketDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/BasketDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/BasketlineDaoCgImplDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/BasketlineDaoCgImplDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/BasketlineDefault$BasketlineLazyListLoader.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/BasketlineDefault$BasketlineLazyListLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/BasketlineDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/BasketlineDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/BobiPersistenceGenerator.class" afterPath="$PROJECT_DIR$/target/classes/persistence/BobiPersistenceGenerator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controllers/client/ClientController.class" afterPath="$PROJECT_DIR$/target/classes/controllers/client/ClientController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/ClientDaoCgImplDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/ClientDaoCgImplDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ClientDefault$ClientLazyListLoader.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ClientDefault$ClientLazyListLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ClientDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ClientDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controllers/prestation/PrestationController.class" afterPath="$PROJECT_DIR$/target/classes/controllers/prestation/PrestationController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/PrestationDaoCgImplDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/PrestationDaoCgImplDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/PrestationDefault$PrestationLazyListLoader.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/PrestationDefault$PrestationLazyListLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/PrestationDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/PrestationDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/PrestationcategorieDaoCgImplDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/PrestationcategorieDaoCgImplDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/PrestationcategorieDefault$PrestationcategorieLazyListLoader.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/PrestationcategorieDefault$PrestationcategorieLazyListLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/PrestationcategorieDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/PrestationcategorieDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/controllers/produit/ProduitController.class" afterPath="$PROJECT_DIR$/target/classes/controllers/produit/ProduitController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/ProduitDaoCgImplDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/ProduitDaoCgImplDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ProduitDefault$ProduitLazyListLoader.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ProduitDefault$ProduitLazyListLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ProduitDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ProduitDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/ProduitcategorieDaoCgImplDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/dao/impl/cg/ProduitcategorieDaoCgImplDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ProduitcategorieDefault$ProduitcategorieLazyListLoader.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ProduitcategorieDefault$ProduitcategorieLazyListLoader.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ProduitcategorieDefault.class" afterPath="$PROJECT_DIR$/target/classes/persistence/beans/biz/ProduitcategorieDefault.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/BasketDaoCgImplDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/BasketDaoCgImplDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/BasketDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/BasketDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/BasketlineDaoCgImplDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/BasketlineDaoCgImplDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/BasketlineDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/BasketlineDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/BobiPersistenceGenerator.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/BobiPersistenceGenerator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/ClientDaoCgImplDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/ClientDaoCgImplDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/ClientDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/ClientDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/MANIFEST.MF" afterPath="$PROJECT_DIR$/target/MANIFEST.MF" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cardiweb_cpersistence_cpersistence_rx_generator_1_2_37_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cardiweb_cpersistence_cpersistence_rx_generator_1_2_37_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cardiweb_cpersistence_cpersistence_rx_runtime_1_2_37_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__cardiweb_cpersistence_cpersistence_rx_runtime_1_2_37_SNAPSHOT.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/PrestationDaoCgImplDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/PrestationDaoCgImplDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/PrestationDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/PrestationDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/PrestationcategorieDaoCgImplDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/PrestationcategorieDaoCgImplDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/PrestationcategorieDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/PrestationcategorieDefault.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/controllers/produit/ProduitController.java" afterPath="$PROJECT_DIR$/src/main/java/controllers/produit/ProduitController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/ProduitDaoCgImplDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/ProduitDaoCgImplDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/ProduitDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/ProduitDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/ProduitcategorieDaoCgImplDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/dao/impl/cg/ProduitcategorieDaoCgImplDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/ProduitcategorieDefault.java" afterPath="$PROJECT_DIR$/src/main/java/persistence/beans/biz/ProduitcategorieDefault.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bobi-boot.iml" afterPath="$PROJECT_DIR$/bobi-boot.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/persistence/c-generator-default.properties" afterPath="$PROJECT_DIR$/src/main/java/persistence/c-generator-default.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/persistence/c-generator-default.properties" afterPath="$PROJECT_DIR$/target/classes/persistence/c-generator-default.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <list id="bd45d7a2-9910-4095-a7b0-9ddbdd53a924" name="ideaFiles" comment="" />
     <ignored path="bobi-boot.iws" />
@@ -93,7 +42,9 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="933" max-vertical-offset="1428">
               <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -113,7 +64,15 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="119" max-vertical-offset="374">
               <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding />
+              <folding>
+                <element signature="imports" expanded="false" />
+                <element signature="e#334#335#0" expanded="false" />
+                <element signature="e#378#379#0" expanded="false" />
+                <element signature="e#439#440#0" expanded="false" />
+                <element signature="e#472#473#0" expanded="false" />
+                <element signature="e#548#549#0" expanded="false" />
+                <element signature="e#592#593#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -124,7 +83,11 @@
             <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="408">
               <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
               <folding>
-                <element signature="e#415#416#0" expanded="true" />
+                <element signature="imports" expanded="false" />
+                <element signature="e#294#295#0" expanded="false" />
+                <element signature="e#334#335#0" expanded="false" />
+                <element signature="e#478#479#0" expanded="false" />
+                <element signature="e#518#519#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -135,7 +98,14 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0" vertical-offset="49" max-vertical-offset="544">
               <caret line="13" column="36" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="36" />
-              <folding />
+              <folding>
+                <element signature="e#429#430#0" expanded="false" />
+                <element signature="e#454#455#0" expanded="false" />
+                <element signature="e#488#489#0" expanded="false" />
+                <element signature="e#516#517#0" expanded="false" />
+                <element signature="e#566#567#0" expanded="false" />
+                <element signature="e#612#613#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -143,18 +113,18 @@
       <file leaf-file-name="ProduitResponse.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/produit/response/ProduitResponse.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="612">
-              <caret line="12" column="75" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+              <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProduitController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ProduitController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/controllers/produit/ProduitController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="951" max-vertical-offset="1870">
-              <caret line="106" column="7" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.33333334" vertical-offset="1263" max-vertical-offset="1870">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -180,10 +150,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Application.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Application.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.27474746" vertical-offset="0" max-vertical-offset="495">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
               <caret line="14" column="80" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
               <folding />
             </state>
@@ -414,6 +384,40 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="produit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="bobi-boot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="boby-project-spring-boot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="produit" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="response" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -846,7 +850,7 @@
       <workItem from="1425503471208" duration="934000" />
       <workItem from="1425939052020" duration="1386000" />
       <workItem from="1426022320426" duration="3561000" />
-      <workItem from="1426459408272" duration="29000" />
+      <workItem from="1426459408272" duration="1192000" />
     </task>
     <task id="LOCAL-00001" summary="Controller ok et persistence ok !">
       <created>1419170547220</created>
@@ -864,7 +868,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41174000" />
+    <option name="totallyTimeSpent" value="42337000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -887,7 +891,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="1" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -912,7 +916,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.44772968" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="327" width="1920" height="396" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.44772968" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="0" y="327" width="1920" height="396" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -948,12 +952,6 @@
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/controllers/produit/ProduitController.java</url>
-          <line>103</line>
-          <properties />
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
       <option name="time" value="5" />
     </breakpoint-manager>
@@ -968,7 +966,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="408">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#334#335#0" expanded="false" />
+            <element signature="e#378#379#0" expanded="false" />
+            <element signature="e#439#440#0" expanded="false" />
+            <element signature="e#472#473#0" expanded="false" />
+            <element signature="e#548#549#0" expanded="false" />
+            <element signature="e#592#593#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -983,7 +989,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="578">
           <caret line="13" column="36" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="e#429#430#0" expanded="false" />
+            <element signature="e#454#455#0" expanded="false" />
+            <element signature="e#488#489#0" expanded="false" />
+            <element signature="e#516#517#0" expanded="false" />
+            <element signature="e#566#567#0" expanded="false" />
+            <element signature="e#612#613#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1260,7 +1273,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="374">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#334#335#0" expanded="false" />
+            <element signature="e#378#379#0" expanded="false" />
+            <element signature="e#439#440#0" expanded="false" />
+            <element signature="e#472#473#0" expanded="false" />
+            <element signature="e#548#549#0" expanded="false" />
+            <element signature="e#592#593#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1269,7 +1290,11 @@
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="476">
           <caret line="16" column="48" selection-start-line="16" selection-start-column="48" selection-end-line="16" selection-end-column="48" />
           <folding>
-            <element signature="e#415#416#0" expanded="true" />
+            <element signature="imports" expanded="false" />
+            <element signature="e#294#295#0" expanded="false" />
+            <element signature="e#334#335#0" expanded="false" />
+            <element signature="e#478#479#0" expanded="false" />
+            <element signature="e#518#519#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1278,15 +1303,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
           <caret line="13" column="36" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/produit/response/ProduitResponse.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="816">
-          <caret line="12" column="75" selection-start-line="12" selection-start-column="75" selection-end-line="12" selection-end-column="75" />
-          <folding />
+          <folding>
+            <element signature="e#429#430#0" expanded="false" />
+            <element signature="e#454#455#0" expanded="false" />
+            <element signature="e#488#489#0" expanded="false" />
+            <element signature="e#516#517#0" expanded="false" />
+            <element signature="e#566#567#0" expanded="false" />
+            <element signature="e#612#613#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1294,15 +1318,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="933" max-vertical-offset="1428">
           <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/produit/ProduitController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="951" max-vertical-offset="1870">
-          <caret line="106" column="7" selection-start-line="106" selection-start-column="7" selection-end-line="106" selection-end-column="7" />
-          <folding />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1332,8 +1350,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/Application.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27474746" vertical-offset="0" max-vertical-offset="495">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="323">
           <caret line="14" column="80" selection-start-line="14" selection-start-column="80" selection-end-line="14" selection-end-column="80" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/produit/response/ProduitResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="612">
+          <caret line="12" column="11" selection-start-line="12" selection-start-column="11" selection-end-line="12" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controllers/produit/ProduitController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334" vertical-offset="1263" max-vertical-offset="1870">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
           <folding />
         </state>
       </provider>

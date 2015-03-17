@@ -32,7 +32,7 @@ public class ProduitController {
     private static Logger logger = LoggerFactory.getLogger(controllers.prestation.PrestationController.class);
 
     /**
-     * Création d'un contact
+     * Création d'un categorie
      *
      * @return
      * @throws Exception
@@ -120,4 +120,28 @@ public class ProduitController {
 
         return result;
     }
+
+//    /**
+//     * Création d'un produit
+//     *
+//     * @return
+//     * @throws Exception
+//     */
+//    @RequestMapping(value = "", method = POST)
+//    public @ResponseBody
+//    DeferredResult<ProduitResponse> addProduit(@Valid @RequestBody ProduitRequest request) {
+//
+//        DeferredResult<ProduitResponse> result = new TiskaDeferredResult<>();
+//
+////        GeneratorRuntime.getGeneratorRuntime().executeTransaction(() -> {
+//        Produitcategorie categ = Produitcategorie.create();
+//        categ.setLibelle(request.getLibelleProduitCategorie());
+//        categ.save().subscribe();
+//        logger.info("création du produit catégorie "+categ.getId());
+//        result.setResult(new ProduitCategorieResponse(categ.getId(),categ.getLibelle()));
+//
+////        });
+//
+//        return result;
+//    }
 }

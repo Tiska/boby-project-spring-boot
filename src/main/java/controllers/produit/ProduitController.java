@@ -2,6 +2,7 @@ package controllers.produit;
 
 import api.TiskaDeferredResult;
 import controllers.produit.request.ProduitCategorieRequest;
+import controllers.produit.request.ProduitRequest;
 import controllers.produit.response.ProduitCategorieListResponse;
 import controllers.produit.response.ProduitCategorieResponse;
 import controllers.produit.response.ProduitListResponse;
@@ -48,7 +49,7 @@ public class ProduitController {
             categ.setLibelle(request.getLibelleProduitCategorie());
             categ.save().subscribe();
             logger.info("création du produit catégorie "+categ.getId());
-            result.setResult(new ProduitCategorieResponse(categ.getId(),categ.getLibelle()));
+            result.setResult(new ProduitCategorieResponse(String.valueOf(categ.getId()),categ.getLibelle()));
 
 //        });
 
@@ -73,7 +74,7 @@ public class ProduitController {
         Produitcategorie.getList().subscribe(list -> {
             if (list != null && !list.isEmpty()) {
                 for (Produitcategorie categ : list) {
-                    ProduitCategorieResponse resp = new ProduitCategorieResponse(categ.getId(),categ.getLibelle());
+                    ProduitCategorieResponse resp = new ProduitCategorieResponse(String.valueOf(categ.getId()), categ.getLibelle());
                     categories.add(resp);
                 }
             }
@@ -106,7 +107,7 @@ public class ProduitController {
         Produit.getProduitListParIdProduitCateg(idCategorie).subscribe(list -> {
             if (list != null && !list.isEmpty()) {
                 for (Produit prod : list) {
-                    ProduitResponse resp = new ProduitResponse(prod.getId(), prod.getLibelle(), prod.getStock());
+                    ProduitResponse resp = new ProduitResponse(String.valueOf(prod.getId()), prod.getLibelle(), prod.getStock());
                     produits.add(resp);
                 }
             }
@@ -121,27 +122,42 @@ public class ProduitController {
         return result;
     }
 
-//    /**
-//     * Création d'un produit
-//     *
-//     * @return
-//     * @throws Exception
-//     */
-//    @RequestMapping(value = "", method = POST)
-//    public @ResponseBody
-//    DeferredResult<ProduitResponse> addProduit(@Valid @RequestBody ProduitRequest request) {
-//
-//        DeferredResult<ProduitResponse> result = new TiskaDeferredResult<>();
-//
-////        GeneratorRuntime.getGeneratorRuntime().executeTransaction(() -> {
-//        Produitcategorie categ = Produitcategorie.create();
-//        categ.setLibelle(request.getLibelleProduitCategorie());
-//        categ.save().subscribe();
-//        logger.info("création du produit catégorie "+categ.getId());
-//        result.setResult(new ProduitCategorieResponse(categ.getId(),categ.getLibelle()));
-//
-////        });
-//
-//        return result;
-//    }
+    /**
+     * Création d'un produit
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "", method = POST)
+    public @ResponseBody
+    DeferredResult<ProduitResponse> addProduit(@Valid @RequestBody ProduitRequest request) {
+
+        DeferredResult<ProduitResponse> result = new TiskaDeferredResult<>();
+
+//        GeneratorRuntime.getGeneratorRuntime().executeTransaction(() -> {
+        Produit produit = Produit.create();
+        produit.setLibelle(request.getLibelle());
+        produit.setStock(request.getStock());
+        produit.setPrixAchat(request.getPrixAchat());
+        produit.setIdProduitCateg(request.getIdProduitCateg());
+
+        if(request.getCoefficiant() != null && request.getPrixVente() != null){
+            produit.setPrixAchat(request.getPrixAchat());
+            produit.setCoefficiant(request.getCoefficiant());
+        }else if(request.getCoefficiant() != null){
+            produit.setPrixVenteCalcule(request.getPrixAchat()*request.getCoefficiant()+request.getPrixAchat());
+        }else if(request.getPrixVente() != null){
+            produit.setCoefficiant((request.getPrixVente() - request.getPrixAchat()) /request.getPrixAchat());
+        }else{
+            produit.setPrixVenteCalcule(request.getPrixVente());
+        }
+
+        produit.save().subscribe();
+        logger.info("création du produit "+produit.getId());
+        result.setResult(new ProduitResponse(String.valueOf(produit.getId()),produit.getLibelle(),produit.getStock()));
+
+//        });
+
+        return result;
+    }
 }

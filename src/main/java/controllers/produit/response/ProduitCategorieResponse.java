@@ -8,20 +8,19 @@ import com.fasterxml.jackson.databind.ser.std.StringSerializer;
  * Created by Tiska on 20/12/2014.
  */
 public class ProduitCategorieResponse extends ApiResponse {
-    @JsonSerialize(using = StringSerializer.class)
-    private long id;
+    private String id;
     private String libelleProduitCategorie;
 
-    public ProduitCategorieResponse(long id, String libelleProduitCategorie) {
+    public ProduitCategorieResponse(String id, String libelleProduitCategorie) {
         this.id = id;
         this.libelleProduitCategorie = libelleProduitCategorie;
     }
 
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

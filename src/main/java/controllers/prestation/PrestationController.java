@@ -48,7 +48,7 @@ public class PrestationController {
             categ.setLibelle(request.getLibellePrestationCategorie());
             categ.save().subscribe();
             logger.info("création de la prestation catégorie "+categ.getId());
-            result.setResult(new PrestationCategorieResponse(categ.getId(),categ.getLibelle()));
+            result.setResult(new PrestationCategorieResponse(String.valueOf(categ.getId()), categ.getLibelle()));
 
 //        });
 
@@ -73,7 +73,7 @@ public class PrestationController {
         Prestationcategorie.getList().subscribe(list -> {
             if (list != null && !list.isEmpty()) {
                 for (Prestationcategorie categ : list) {
-                    PrestationCategorieResponse resp = new PrestationCategorieResponse(categ.getId(),categ.getLibelle());
+                    PrestationCategorieResponse resp = new PrestationCategorieResponse(String.valueOf(categ.getId()), categ.getLibelle());
                     categories.add(resp);
                 }
             }

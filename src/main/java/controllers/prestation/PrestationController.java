@@ -2,17 +2,22 @@ package controllers.prestation;
 
 import api.TiskaDeferredResult;
 import controllers.prestation.request.PrestationCategorieRequest;
+import controllers.prestation.request.PrestationRequest;
 import controllers.prestation.response.PrestationCategorieListResponse;
 import controllers.prestation.response.PrestationCategorieResponse;
+import controllers.prestation.response.PrestationListResponse;
+import controllers.prestation.response.PrestationResponse;
+import controllers.produit.request.ProduitRequest;
+import controllers.produit.response.ProduitListResponse;
+import controllers.produit.response.ProduitResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.context.request.async.DeferredResult;
 import persistence.beans.biz.Client;
+import persistence.beans.biz.Prestation;
 import persistence.beans.biz.Prestationcategorie;
+import persistence.beans.biz.Produit;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
@@ -82,6 +87,67 @@ public class PrestationController {
         logger.info(categories.size()+" categories trouvés");
 
         result.setResult(new PrestationCategorieListResponse(categories));
+
+//        });
+
+        return result;
+    }
+
+    /**
+     * liste des prestations par catégorie
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/list/byCategorie/{idCategorie}", method = GET)
+    public @ResponseBody
+    DeferredResult<PrestationListResponse> getProduitsByCategorie(@PathVariable("idCategorie") long idCategorie) {
+
+        DeferredResult<PrestationListResponse> result = new TiskaDeferredResult<>();
+
+//        GeneratorRuntime.getGeneratorRuntime().executeTransaction(() -> {
+        List<PrestationResponse> prestations = new ArrayList<>();
+
+        Prestation.getPrestationListParIdPrestationCateg(idCategorie).subscribe(list -> {
+            if (list != null && !list.isEmpty()) {
+                for (Prestation presta : list) {
+                    PrestationResponse resp = new PrestationResponse(String.valueOf(presta.getId()), presta.getLibelle(), presta.getPrix(), presta.getDuree());
+                    prestations.add(resp);
+                }
+            }
+        });
+
+        logger.info(prestations.size()+" prestations trouvés");
+
+        result.setResult(new PrestationListResponse(prestations));
+
+//        });
+
+        return result;
+    }
+
+    /**
+     * Création d'une prestation
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/", method = POST)
+    public @ResponseBody
+    DeferredResult<PrestationResponse> addPrestation(@Valid @RequestBody PrestationRequest request) {
+
+        DeferredResult<PrestationResponse> result = new TiskaDeferredResult<>();
+
+//        GeneratorRuntime.getGeneratorRuntime().executeTransaction(() -> {
+        Prestation prestation = Prestation.create();
+        prestation.setLibelle(request.getLibelle());
+        prestation.setDuree(request.getDuree());
+        prestation.setPrix(request.getPrix());
+        prestation.setIdPrestationCateg(request.getIdPrestationCategorie());
+
+        prestation.save().subscribe();
+        logger.info("création du prestation "+prestation.getId());
+        result.setResult(new PrestationResponse(String.valueOf(prestation.getId()),prestation.getLibelle(),prestation.getDuree(),prestation.getPrix()));
 
 //        });
 

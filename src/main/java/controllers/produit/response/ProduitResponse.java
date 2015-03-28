@@ -11,11 +11,13 @@ public class ProduitResponse extends ApiResponse {
     private String id;
     private String libelleProduit;
     private Integer stock;
+    private Integer prixVente;
 
-    public ProduitResponse(String id, String libelleProduit, Integer stock) {
+    public ProduitResponse(String id, String libelleProduit, Integer stock, Integer prixVente) {
         this.id = id;
         this.libelleProduit = libelleProduit;
         this.stock = stock;
+        this.prixVente = prixVente;
     }
 
     public String getId() {
@@ -40,5 +42,13 @@ public class ProduitResponse extends ApiResponse {
 
     public void setStock(Integer stock) {
         this.stock = stock;
+    }
+
+    public Integer getPrixVente() {
+        return prixVente;
+    }
+
+    public void setPrixVente(Integer prixVente) {
+        this.prixVente = prixVente;
     }
 }

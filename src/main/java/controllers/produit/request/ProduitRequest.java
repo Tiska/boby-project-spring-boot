@@ -25,18 +25,19 @@ public class ProduitRequest extends ApiResponse {
     private Integer prixVente;
     private Integer coefficiant;
 
-    private long idProduitCateg;
+    @NotNull(message = "Invalid idProduitCategorie")
+    private long idProduitCategorie;
 
     public ProduitRequest() {
     }
 
-    public ProduitRequest(String libelle, Integer stock, Integer prixAchat, Integer prixVente, Integer coefficiant, long idProduitCateg) {
+    public ProduitRequest(String libelle, Integer stock, Integer prixAchat, Integer prixVente, Integer coefficiant, long idProduitCategorie) {
         this.libelle = libelle;
         this.stock = stock;
         this.prixAchat = prixAchat;
         this.prixVente = prixVente;
         this.coefficiant = coefficiant;
-        this.idProduitCateg = idProduitCateg;
+        this.idProduitCategorie = idProduitCategorie;
     }
 
     public String getLibelle() {
@@ -79,11 +80,11 @@ public class ProduitRequest extends ApiResponse {
         this.coefficiant = coefficiant;
     }
 
-    public long getIdProduitCateg() {
-        return idProduitCateg;
+    public long getIdProduitCategorie() {
+        return idProduitCategorie;
     }
 
-    public void setIdProduitCateg(long idProduitCateg) {
-        this.idProduitCateg = idProduitCateg;
+    public void setIdProduitCategorie(long idProduitCategorie) {
+        this.idProduitCategorie = idProduitCategorie;
     }
 }

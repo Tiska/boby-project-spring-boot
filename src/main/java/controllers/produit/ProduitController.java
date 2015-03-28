@@ -107,7 +107,7 @@ public class ProduitController {
         Produit.getProduitListParIdProduitCateg(idCategorie).subscribe(list -> {
             if (list != null && !list.isEmpty()) {
                 for (Produit prod : list) {
-                    ProduitResponse resp = new ProduitResponse(String.valueOf(prod.getId()), prod.getLibelle(), prod.getStock());
+                    ProduitResponse resp = new ProduitResponse(String.valueOf(prod.getId()), prod.getLibelle(), prod.getStock(),prod.getPrixVenteCalcule());
                     produits.add(resp);
                 }
             }
@@ -128,7 +128,7 @@ public class ProduitController {
      * @return
      * @throws Exception
      */
-    @RequestMapping(value = "", method = POST)
+    @RequestMapping(value = "/", method = POST)
     public @ResponseBody
     DeferredResult<ProduitResponse> addProduit(@Valid @RequestBody ProduitRequest request) {
 
@@ -139,22 +139,25 @@ public class ProduitController {
         produit.setLibelle(request.getLibelle());
         produit.setStock(request.getStock());
         produit.setPrixAchat(request.getPrixAchat());
-        produit.setIdProduitCateg(request.getIdProduitCateg());
+        produit.setIdProduitCateg(request.getIdProduitCategorie());
 
         if(request.getCoefficiant() != null && request.getPrixVente() != null){
-            produit.setPrixAchat(request.getPrixAchat());
+            produit.setPrixVenteCalcule(request.getPrixVente());
             produit.setCoefficiant(request.getCoefficiant());
         }else if(request.getCoefficiant() != null){
-            produit.setPrixVenteCalcule(request.getPrixAchat()*request.getCoefficiant()+request.getPrixAchat());
+            produit.setPrixVenteCalcule(request.getPrixAchat()*request.getCoefficiant());
+            produit.setCoefficiant(request.getCoefficiant());
         }else if(request.getPrixVente() != null){
-            produit.setCoefficiant((request.getPrixVente() - request.getPrixAchat()) /request.getPrixAchat());
-        }else{
+            produit.setCoefficiant(request.getPrixVente() /request.getPrixAchat());
             produit.setPrixVenteCalcule(request.getPrixVente());
+        }else{
+            produit.setPrixVenteCalcule(request.getPrixAchat());
+            produit.setCoefficiant(0);
         }
 
         produit.save().subscribe();
         logger.info("création du produit "+produit.getId());
-        result.setResult(new ProduitResponse(String.valueOf(produit.getId()),produit.getLibelle(),produit.getStock()));
+        result.setResult(new ProduitResponse(String.valueOf(produit.getId()),produit.getLibelle(),produit.getStock(),produit.getPrixVenteCalcule()));
 
 //        });
 

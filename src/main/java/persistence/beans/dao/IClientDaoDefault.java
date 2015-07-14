@@ -314,6 +314,36 @@ interface IClientDaoDefault {
 		 * @return QueryColumn
 		 */
 		public QueryColumn getEmailISNULL();
+		/**
+		 * colonne POINTS_FIDELITE (propriete pointsFidelite) a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getPointsFidelite();
+		/**
+		 * colonne POINTS_FIDELITE (propriete pointsFidelite) aggregee par la fonction min() a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getPointsFideliteMIN();
+		/**
+		 * colonne POINTS_FIDELITE (propriete pointsFidelite) aggregee par la fonction max') a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getPointsFideliteMAX();
+		/**
+		 * colonne POINTS_FIDELITE (propriete pointsFidelite) aggregee par la fonction count() a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getPointsFideliteCOUNT();
+		/**
+		 * colonne POINTS_FIDELITE (propriete pointsFidelite) aggregee par la fonction sum() a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getPointsFideliteSUM();
+		/**
+		 * Objet representant la colonne POINTS_FIDELITE (propriete pointsFidelite) aggregee par la fonction avg() a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getPointsFideliteAVG();
 	}
 	
 }

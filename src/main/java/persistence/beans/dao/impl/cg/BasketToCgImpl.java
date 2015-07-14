@@ -180,5 +180,25 @@ public class BasketToCgImpl implements persistence.beans.dao.IBasketTo, java.io.
 	public void setIdClient(long idClient) {
 		_idClient=idClient;
 	}
+	private java.sql.Timestamp _datePaiement = null;
+	/**
+	 * Obtenir la valeur de la propriete datePaiement.
+	 *
+	 * @return la valeur de la propriete datePaiement
+	 */
+	
+	@DBFieldInfos(name="DATE_PAIEMENT")
+	@Constraint(nullable=true,primary=false,unique=false,fieldOrder=6)
+	public java.sql.Timestamp getDatePaiement() {
+		return _datePaiement;
+	}
+	/**
+	 * Affecte la propriete datePaiement.
+	 *
+	 * @param datePaiement la valeur a affecter.
+	 */
+	public void setDatePaiement(java.sql.Timestamp datePaiement) {
+		_datePaiement=datePaiement;
+	}
 	
 }

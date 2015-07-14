@@ -129,6 +129,15 @@ public abstract class BasketDefault {
 		return getDao().getBasketListParIdClient(idClient).map((List<IBasketTo> tos) -> Basket.toBizList(tos));
 	}
 	
+	/**
+	 * Getter lie a l'index CLIENT_DATE_PAIEMENT.
+	 * @param datePaiement la valeur de la colonne datePaiement
+	 * @param idClient la valeur de la colonne idClient
+	 * @return La liste des objets correspondant aux criteres.
+	 */
+	public static Observable<java.util.List<persistence.beans.biz.Basket>> getBasketListParDatePaiementEtIdClient(java.sql.Timestamp datePaiement, long idClient) {
+		return getDao().getBasketListParDatePaiementEtIdClient(datePaiement, idClient).map((List<IBasketTo> tos) -> Basket.toBizList(tos));
+	}
 	
 	private boolean isCopy = false;
 	private IBasketTo getTo(boolean read) {
@@ -252,6 +261,34 @@ public abstract class BasketDefault {
 	
 	
 	
+	/**
+	 * Obtenir la valeur de la propriete datePaiement.
+	 *
+	 * @return la valeur de la propriete datePaiement
+	 */
+	public Optional<java.time.LocalDateTime> getDatePaiement() {
+		java.sql.Timestamp timestamp = getTo(false).getDatePaiement();
+		if (timestamp == null) {
+			return Optional.empty();
+		}
+		return Optional.of(java.time.LocalDateTime.ofInstant(java.time.Instant.ofEpochMilli(timestamp.getTime()), java.time.ZoneId.systemDefault()));
+	}
+	
+	/**
+	 * Affecte la propriete datePaiement.
+	 *
+	 * @param datePaiement la valeur a affecter.
+	 */
+	public void setDatePaiement(java.time.LocalDateTime datePaiement) {
+		if (datePaiement == null) {
+			getTo(false).setDatePaiement(null);
+		} else {
+			getTo(false).setDatePaiement(new java.sql.Timestamp(datePaiement.atZone(java.time.ZoneId.systemDefault()).toInstant().toEpochMilli()));
+		}
+	}
+	
+	
+	
 	public boolean isNew() {
 		return _to.isNew();
 	}
@@ -270,6 +307,7 @@ public abstract class BasketDefault {
 		setTypePayment(to.getTypePayment());
 		setDate(to.getDate());
 		setIdClient(to.getIdClient());
+		setDatePaiement(to.getDatePaiement().orElse(null));
 	}
 	
 	/**

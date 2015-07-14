@@ -286,5 +286,25 @@ public class ClientToCgImpl implements persistence.beans.dao.IClientTo, java.io.
 		}
 		_email=email;
 	}
+	private int _pointsFidelite = 0;
+	/**
+	 * Obtenir la valeur de la propriete pointsFidelite.
+	 *
+	 * @return la valeur de la propriete pointsFidelite
+	 */
+	
+	@DBFieldInfos(name="POINTS_FIDELITE")
+	@Constraint(nullable=false,primary=false,unique=false,fieldOrder=10)
+	public int getPointsFidelite() {
+		return _pointsFidelite;
+	}
+	/**
+	 * Affecte la propriete pointsFidelite.
+	 *
+	 * @param pointsFidelite la valeur a affecter.
+	 */
+	public void setPointsFidelite(int pointsFidelite) {
+		_pointsFidelite=pointsFidelite;
+	}
 	
 }

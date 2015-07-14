@@ -318,6 +318,27 @@ public abstract class ClientDefault {
 	
 	
 	
+	/**
+	 * Obtenir la valeur de la propriete pointsFidelite.
+	 *
+	 * @return la valeur de la propriete pointsFidelite
+	 */
+	public int getPointsFidelite() {
+		return getTo(true).getPointsFidelite();
+	}
+	
+	
+	/**
+	 * Affecte la propriete pointsFidelite.
+	 *
+	 * @param pointsFidelite la valeur a affecter.
+	 */
+	public void setPointsFidelite(int pointsFidelite) {
+		getTo(false).setPointsFidelite(pointsFidelite);
+	}
+	
+	
+	
 	public boolean isNew() {
 		return _to.isNew();
 	}
@@ -340,6 +361,7 @@ public abstract class ClientDefault {
 		setVille(to.getVille().orElse(null));
 		setBirthday(to.getBirthday().orElse(null));
 		setEmail(to.getEmail().orElse(null));
+		setPointsFidelite(to.getPointsFidelite());
 	}
 	
 	/**

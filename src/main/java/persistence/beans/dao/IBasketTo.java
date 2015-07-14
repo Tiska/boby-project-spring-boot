@@ -78,6 +78,20 @@ public interface IBasketTo extends java.io.Serializable {
 	 */
 	public void setIdClient(long idClient);
 	
+	/**
+	 * Obtenir la valeur de la propriete datePaiement.
+	 *
+	 * @return la valeur de la propriete datePaiement
+	 */
+	public java.sql.Timestamp getDatePaiement();
+	
+	/**
+	 * Affecte la propriete datePaiement.
+	 *
+	 * @param datePaiement la valeur a affecter.
+	 */
+	public void setDatePaiement(java.sql.Timestamp datePaiement);
+	
 	public boolean isNew();
 	
 	public void setNew(boolean _new);

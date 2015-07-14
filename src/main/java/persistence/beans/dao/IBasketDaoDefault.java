@@ -27,6 +27,13 @@ interface IBasketDaoDefault {
 	 * @return La liste des objets correspondant aux criteres.
 	 */
 	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParIdClient(long idClient);
+	/**
+	 * Getter lie a l'index CLIENT_DATE_PAIEMENT.
+	 * @param datePaiement la valeur de la colonne datePaiement
+	 * @param idClient la valeur de la colonne idClient
+	 * @return La liste des objets correspondant aux criteres.
+	 */
+	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParDatePaiementEtIdClient(java.sql.Timestamp datePaiement, long idClient);
 	
 	/**
 	 * Retourne un persistence query permettant de faire des recherche sur la classe persistence.beans.dao.IBasketTo
@@ -200,6 +207,31 @@ interface IBasketDaoDefault {
 		 * @return QueryColumn
 		 */
 		public QueryColumn getIdClientAVG();
+		/**
+		 * colonne DATE_PAIEMENT (propriete datePaiement) a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getDatePaiement();
+		/**
+		 * colonne DATE_PAIEMENT (propriete datePaiement) aggregee par la fonction min() a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getDatePaiementMIN();
+		/**
+		 * colonne DATE_PAIEMENT (propriete datePaiement) aggregee par la fonction max') a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getDatePaiementMAX();
+		/**
+		 * colonne DATE_PAIEMENT (propriete datePaiement) aggregee par la fonction count() a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getDatePaiementCOUNT();
+		/**
+		 * Objet representant la colonne DATE_PAIEMENT (propriete datePaiement) aggregee par la fonction isnull() a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getDatePaiementISNULL();
 	}
 	
 }

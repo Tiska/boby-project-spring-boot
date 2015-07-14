@@ -96,6 +96,7 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 	protected static String _FIELD_TYPEPAYMENT = "TYPE_PAYMENT";
 	protected static String _FIELD_DATE = "DATE";
 	protected static String _FIELD_IDCLIENT = "ID_CLIENT";
+	protected static String _FIELD_DATEPAIEMENT = "DATE_PAIEMENT";
 	
 	private void initSchema() {
 		String s = null;
@@ -136,6 +137,10 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 		s = getGeneratorRuntime().getStringProperty("c-generator.persistence.Basket.idClient.column_name");
 		if (s!=null) {
 			_FIELD_IDCLIENT = s;
+		}
+		s = getGeneratorRuntime().getStringProperty("c-generator.persistence.Basket.datePaiement.column_name");
+		if (s!=null) {
+			_FIELD_DATEPAIEMENT = s;
 		}
 		
 		initDeleteQuery();
@@ -308,6 +313,26 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 		 */
 		@Deprecated
 		public static final QueryColumn idClientAVG = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.AVG, long.class);
+		/**
+		 * Objet representant la colonne DATE_PAIEMENT (propriete datePaiement) a utiliser dans les requetes.
+		 */
+		@Deprecated
+		public static final QueryColumn datePaiement = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "datePaiement", _FIELD_DATEPAIEMENT, null, java.sql.Timestamp.class);
+		/**
+		 * Objet representant la colonne DATE_PAIEMENT (propriete datePaiement) aggregee par la fonction min() a utiliser dans les requetes.
+		 */
+		@Deprecated
+		public static final QueryColumn datePaiementMIN = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "datePaiement", _FIELD_DATEPAIEMENT, JDBCFunction.MIN, java.sql.Timestamp.class);
+		/**
+		 * Objet representant la colonne DATE_PAIEMENT (propriete datePaiement) aggregee par la fonction max') a utiliser dans les requetes.
+		 */
+		@Deprecated
+		public static final QueryColumn datePaiementMAX = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "datePaiement", _FIELD_DATEPAIEMENT, JDBCFunction.MAX, java.sql.Timestamp.class);
+		/**
+		 * Objet representant la colonne DATE_PAIEMENT (propriete datePaiement) aggregee par la fonction count() a utiliser dans les requetes.
+		 */
+		@Deprecated
+		public static final QueryColumn datePaiementCOUNT = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "datePaiement", _FIELD_DATEPAIEMENT, JDBCFunction.COUNT, java.sql.Timestamp.class);
 	}
 	private IBasketDao.BASKET_COLUMNS columns = null;
 	/**
@@ -513,6 +538,41 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 					}
 					return columnIdClientAVG;
 				}
+				private QueryColumn columnDatePaiement = null;
+				public QueryColumn getDatePaiement(){
+					if( columnDatePaiement == null ){
+						columnDatePaiement = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "datePaiement", _FIELD_DATEPAIEMENT, null, java.sql.Timestamp.class);
+					}
+					return columnDatePaiement;
+				}
+				private QueryColumn columnDatePaiementMIN = null;
+				public QueryColumn getDatePaiementMIN(){
+					if( columnDatePaiementMIN == null ){
+						columnDatePaiementMIN = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "datePaiement", _FIELD_DATEPAIEMENT, JDBCFunction.MIN, java.sql.Timestamp.class);
+					}
+					return columnDatePaiementMIN;
+				}
+				private QueryColumn columnDatePaiementMAX = null;
+				public QueryColumn getDatePaiementMAX(){
+					if( columnDatePaiementMAX == null ){
+						columnDatePaiementMAX = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "datePaiement", _FIELD_DATEPAIEMENT, JDBCFunction.MAX, java.sql.Timestamp.class);
+					}
+					return columnDatePaiementMAX;
+				}
+				private QueryColumn columnDatePaiementCOUNT = null;
+				public QueryColumn getDatePaiementCOUNT(){
+					if( columnDatePaiementCOUNT == null ){
+						columnDatePaiementCOUNT = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "datePaiement", _FIELD_DATEPAIEMENT, JDBCFunction.COUNT, java.sql.Timestamp.class);
+					}
+					return columnDatePaiementCOUNT;
+				}
+				private QueryColumn columnDatePaiementISNULL = null;
+				public QueryColumn getDatePaiementISNULL(){
+					if( columnDatePaiementISNULL == null ){
+						columnDatePaiementISNULL = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "datePaiement", _FIELD_DATEPAIEMENT, JDBCFunction.ISNULL, java.sql.Timestamp.class);
+					}
+					return columnDatePaiementISNULL;
+				}
 			};
 			columns = temp;
 		}
@@ -586,6 +646,11 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 					object.setTypePayment(rs.getInt(_FIELD_TYPEPAYMENT));
 					object.setDate(rs.getTimestamp(_FIELD_DATE));
 					object.setIdClient(rs.getLong(_FIELD_IDCLIENT));
+					rs.getObject("DATE_PAIEMENT");
+					// On affecte pas quand rs.wasNull() car vaut la valeur par defaut
+					if (!rs.wasNull()) {
+						object.setDatePaiement(rs.getTimestamp(_FIELD_DATEPAIEMENT));
+					}
 					
 					if (useCache) { _dao.getCache().putByKey(___key, object); }
 					return object;
@@ -686,8 +751,8 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 	private void initSaveQuery() {
 		
 		
-		INSERT_QUERY = "insert into "+_TABLE_FULL_NAME+" ("+_FIELD_TOTAL+","+_FIELD_TYPEPAYMENT+","+_FIELD_DATE+","+_FIELD_IDCLIENT+","+_FIELD_ID+") values (?,?,?,?,?)";
-		UPDATE_QUERY = "update "+_TABLE_FULL_NAME+" set "+_FIELD_TOTAL+"=?,"+_FIELD_TYPEPAYMENT+"=?,"+_FIELD_DATE+"=?,"+_FIELD_IDCLIENT+"=? where "+_FIELD_ID+"=?";
+		INSERT_QUERY = "insert into "+_TABLE_FULL_NAME+" ("+_FIELD_TOTAL+","+_FIELD_TYPEPAYMENT+","+_FIELD_DATE+","+_FIELD_IDCLIENT+","+_FIELD_DATEPAIEMENT+","+_FIELD_ID+") values (?,?,?,?,?,?)";
+		UPDATE_QUERY = "update "+_TABLE_FULL_NAME+" set "+_FIELD_TOTAL+"=?,"+_FIELD_TYPEPAYMENT+"=?,"+_FIELD_DATE+"=?,"+_FIELD_IDCLIENT+"=?,"+_FIELD_DATEPAIEMENT+"=? where "+_FIELD_ID+"=?";
 	}
 	
 	private String INSERT_QUERY;
@@ -712,7 +777,8 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 						pst.setInt(2, obj.getTypePayment());
 						pst.setTimestamp(3, obj.getDate());
 						pst.setLong(4, obj.getIdClient());
-						fillSQLPrimaryParameters(5, pst, obj);
+						if (obj.getDatePaiement()==null) { pst.setNull(5 , 93);} else { pst.setTimestamp(5, obj.getDatePaiement());}
+						fillSQLPrimaryParameters(6, pst, obj);
 						pst.executeUpdate();
 					} finally {
 						if (pst!=null) try { pst.close(); } catch (Exception e) { logger.error("", e); }
@@ -829,6 +895,15 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParIdClient(long idClient) {
 		return newQuery().equal(BASKET_COLUMNS.idClient, idClient).getList();
 	}
+	/**
+	 * Getter lie a l'index CLIENT_DATE_PAIEMENT.
+	 * @param datePaiement la valeur de la colonne datePaiement
+	 * @param idClient la valeur de la colonne idClient
+	 * @return La liste des objets correspondant aux criteres.
+	 */
+	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParDatePaiementEtIdClient(java.sql.Timestamp datePaiement, long idClient) {
+		return newQuery().equal(BASKET_COLUMNS.datePaiement, datePaiement).equal(BASKET_COLUMNS.idClient, idClient).getList();
+	}
 	
 	/**
 	 * TOUTES les proprietes de l'objet sont source sont copiees dans l'objet destination
@@ -842,6 +917,7 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 		dest.setTypePayment(src.getTypePayment());
 		dest.setDate(src.getDate());
 		dest.setIdClient(src.getIdClient());
+		dest.setDatePaiement(src.getDatePaiement());
 		
 		dest.setNew(src.isNew());
 	}

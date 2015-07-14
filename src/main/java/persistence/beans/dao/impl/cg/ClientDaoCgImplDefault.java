@@ -100,6 +100,7 @@ public abstract class ClientDaoCgImplDefault implements IClientDao {
 	protected static String _FIELD_VILLE = "VILLE";
 	protected static String _FIELD_BIRTHDAY = "BIRTHDAY";
 	protected static String _FIELD_EMAIL = "EMAIL";
+	protected static String _FIELD_POINTSFIDELITE = "POINTS_FIDELITE";
 	
 	private void initSchema() {
 		String s = null;
@@ -156,6 +157,10 @@ public abstract class ClientDaoCgImplDefault implements IClientDao {
 		s = getGeneratorRuntime().getStringProperty("c-generator.persistence.Client.email.column_name");
 		if (s!=null) {
 			_FIELD_EMAIL = s;
+		}
+		s = getGeneratorRuntime().getStringProperty("c-generator.persistence.Client.pointsFidelite.column_name");
+		if (s!=null) {
+			_FIELD_POINTSFIDELITE = s;
 		}
 		
 		initDeleteQuery();
@@ -418,6 +423,36 @@ public abstract class ClientDaoCgImplDefault implements IClientDao {
 		 */
 		@Deprecated
 		public static final QueryColumn emailUPPER = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "email", _FIELD_EMAIL, JDBCFunction.UPPER, java.lang.String.class);
+		/**
+		 * Objet representant la colonne POINTS_FIDELITE (propriete pointsFidelite) a utiliser dans les requetes.
+		 */
+		@Deprecated
+		public static final QueryColumn pointsFidelite = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, null, int.class);
+		/**
+		 * Objet representant la colonne POINTS_FIDELITE (propriete pointsFidelite) aggregee par la fonction min() a utiliser dans les requetes.
+		 */
+		@Deprecated
+		public static final QueryColumn pointsFideliteMIN = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, JDBCFunction.MIN, int.class);
+		/**
+		 * Objet representant la colonne POINTS_FIDELITE (propriete pointsFidelite) aggregee par la fonction max') a utiliser dans les requetes.
+		 */
+		@Deprecated
+		public static final QueryColumn pointsFideliteMAX = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, JDBCFunction.MAX, int.class);
+		/**
+		 * Objet representant la colonne POINTS_FIDELITE (propriete pointsFidelite) aggregee par la fonction count() a utiliser dans les requetes.
+		 */
+		@Deprecated
+		public static final QueryColumn pointsFideliteCOUNT = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, JDBCFunction.COUNT, int.class);
+		/**
+		 * Objet representant la colonne POINTS_FIDELITE (propriete pointsFidelite) aggregee par la fonction sum() a utiliser dans les requetes.
+		 */
+		@Deprecated
+		public static final QueryColumn pointsFideliteSUM = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, JDBCFunction.SUM, int.class);
+		/**
+		 * Objet representant la colonne POINTS_FIDELITE (propriete pointsFidelite) aggregee par la fonction avg() a utiliser dans les requetes.
+		 */
+		@Deprecated
+		public static final QueryColumn pointsFideliteAVG = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, JDBCFunction.AVG, int.class);
 	}
 	private IClientDao.CLIENT_COLUMNS columns = null;
 	/**
@@ -791,6 +826,48 @@ public abstract class ClientDaoCgImplDefault implements IClientDao {
 					}
 					return columnEmailISNULL;
 				}
+				private QueryColumn columnPointsFidelite = null;
+				public QueryColumn getPointsFidelite(){
+					if( columnPointsFidelite == null ){
+						columnPointsFidelite = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, null, int.class);
+					}
+					return columnPointsFidelite;
+				}
+				private QueryColumn columnPointsFideliteMIN = null;
+				public QueryColumn getPointsFideliteMIN(){
+					if( columnPointsFideliteMIN == null ){
+						columnPointsFideliteMIN = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, JDBCFunction.MIN, int.class);
+					}
+					return columnPointsFideliteMIN;
+				}
+				private QueryColumn columnPointsFideliteMAX = null;
+				public QueryColumn getPointsFideliteMAX(){
+					if( columnPointsFideliteMAX == null ){
+						columnPointsFideliteMAX = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, JDBCFunction.MAX, int.class);
+					}
+					return columnPointsFideliteMAX;
+				}
+				private QueryColumn columnPointsFideliteCOUNT = null;
+				public QueryColumn getPointsFideliteCOUNT(){
+					if( columnPointsFideliteCOUNT == null ){
+						columnPointsFideliteCOUNT = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, JDBCFunction.COUNT, int.class);
+					}
+					return columnPointsFideliteCOUNT;
+				}
+				private QueryColumn columnPointsFideliteSUM = null;
+				public QueryColumn getPointsFideliteSUM(){
+					if( columnPointsFideliteSUM == null ){
+						columnPointsFideliteSUM = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, JDBCFunction.SUM, int.class);
+					}
+					return columnPointsFideliteSUM;
+				}
+				private QueryColumn columnPointsFideliteAVG = null;
+				public QueryColumn getPointsFideliteAVG(){
+					if( columnPointsFideliteAVG == null ){
+						columnPointsFideliteAVG = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "pointsFidelite", _FIELD_POINTSFIDELITE, JDBCFunction.AVG, int.class);
+					}
+					return columnPointsFideliteAVG;
+				}
 			};
 			columns = temp;
 		}
@@ -892,6 +969,7 @@ public abstract class ClientDaoCgImplDefault implements IClientDao {
 					if (!rs.wasNull()) {
 						object.setEmail(rs.getString(_FIELD_EMAIL));
 					}
+					object.setPointsFidelite(rs.getInt(_FIELD_POINTSFIDELITE));
 					
 					if (useCache) { _dao.getCache().putByKey(___key, object); }
 					return object;
@@ -992,8 +1070,8 @@ public abstract class ClientDaoCgImplDefault implements IClientDao {
 	private void initSaveQuery() {
 		
 		
-		INSERT_QUERY = "insert into "+_TABLE_FULL_NAME+" ("+_FIELD_NOM+","+_FIELD_PRENOM+","+_FIELD_TELEPHONE+","+_FIELD_ADRESSE+","+_FIELD_CODEPOSTAL+","+_FIELD_VILLE+","+_FIELD_BIRTHDAY+","+_FIELD_EMAIL+","+_FIELD_ID+") values (?,?,?,?,?,?,?,?,?)";
-		UPDATE_QUERY = "update "+_TABLE_FULL_NAME+" set "+_FIELD_NOM+"=?,"+_FIELD_PRENOM+"=?,"+_FIELD_TELEPHONE+"=?,"+_FIELD_ADRESSE+"=?,"+_FIELD_CODEPOSTAL+"=?,"+_FIELD_VILLE+"=?,"+_FIELD_BIRTHDAY+"=?,"+_FIELD_EMAIL+"=? where "+_FIELD_ID+"=?";
+		INSERT_QUERY = "insert into "+_TABLE_FULL_NAME+" ("+_FIELD_NOM+","+_FIELD_PRENOM+","+_FIELD_TELEPHONE+","+_FIELD_ADRESSE+","+_FIELD_CODEPOSTAL+","+_FIELD_VILLE+","+_FIELD_BIRTHDAY+","+_FIELD_EMAIL+","+_FIELD_POINTSFIDELITE+","+_FIELD_ID+") values (?,?,?,?,?,?,?,?,?,?)";
+		UPDATE_QUERY = "update "+_TABLE_FULL_NAME+" set "+_FIELD_NOM+"=?,"+_FIELD_PRENOM+"=?,"+_FIELD_TELEPHONE+"=?,"+_FIELD_ADRESSE+"=?,"+_FIELD_CODEPOSTAL+"=?,"+_FIELD_VILLE+"=?,"+_FIELD_BIRTHDAY+"=?,"+_FIELD_EMAIL+"=?,"+_FIELD_POINTSFIDELITE+"=? where "+_FIELD_ID+"=?";
 	}
 	
 	private String INSERT_QUERY;
@@ -1022,7 +1100,8 @@ public abstract class ClientDaoCgImplDefault implements IClientDao {
 						if (obj.getVille()==null) { pst.setNull(6 , 12);} else { pst.setString(6, obj.getVille());}
 						if (obj.getBirthday()==null) { pst.setNull(7 , 93);} else { pst.setTimestamp(7, obj.getBirthday());}
 						if (obj.getEmail()==null) { pst.setNull(8 , 12);} else { pst.setString(8, obj.getEmail());}
-						fillSQLPrimaryParameters(9, pst, obj);
+						pst.setInt(9, obj.getPointsFidelite());
+						fillSQLPrimaryParameters(10, pst, obj);
 						pst.executeUpdate();
 					} finally {
 						if (pst!=null) try { pst.close(); } catch (Exception e) { logger.error("", e); }
@@ -1148,6 +1227,7 @@ public abstract class ClientDaoCgImplDefault implements IClientDao {
 		dest.setVille(src.getVille());
 		dest.setBirthday(src.getBirthday());
 		dest.setEmail(src.getEmail());
+		dest.setPointsFidelite(src.getPointsFidelite());
 		
 		dest.setNew(src.isNew());
 	}

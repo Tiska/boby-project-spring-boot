@@ -7,16 +7,26 @@ public class LignePanierRequest {
 
     private Long idPrestation;
     private Long idProduit;
+    private Long idLignePanier;
     private int quantitee;
     private int reduction;
     private int typeReduction;
 
-    public LignePanierRequest(Long idPrestation, Long idProduit, int quantitee, int reduction, int typeReduction) {
+    public LignePanierRequest(Long idPrestation, Long idProduit, Long idLignePanier, int quantitee, int reduction, int typeReduction) {
         this.idPrestation = idPrestation;
         this.idProduit = idProduit;
+        this.idLignePanier = idLignePanier;
         this.quantitee = quantitee;
         this.reduction = reduction;
         this.typeReduction = typeReduction;
+    }
+
+    public Long getIdLignePanier() {
+        return idLignePanier;
+    }
+
+    public void setIdLignePanier(Long idLignePanier) {
+        this.idLignePanier = idLignePanier;
     }
 
     public Long getIdPrestation() {

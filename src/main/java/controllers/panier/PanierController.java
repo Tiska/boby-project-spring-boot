@@ -40,7 +40,7 @@ public class PanierController extends TiskaController{
          * @return
          * @throws Exception
          */
-        @RequestMapping(value = "/panier/", method = POST)
+        @RequestMapping(value = "", method = POST)
         public @ResponseBody
         DeferredResult<ApiResponse> addLignePanier(@Valid @RequestBody PanierRequest request) {
 
@@ -76,8 +76,16 @@ public class PanierController extends TiskaController{
             //creation du total
             for(LignePanierRequest ligne : request.getLignesPanier()){
 
-                //creation des nouvelles lignes de panier
-                Basketline line = Basketline.create();
+                //creation des nouvelles lignes de panier ou maj de l'existante
+
+                Basketline line = null;
+
+                if(ligne.getIdLignePanier() == null){
+                    line = Basketline.create();
+                }else{
+                    line = Basketline.getBasketline(ligne.getIdLignePanier()).toBlocking().single().get();
+                }
+
                 line.setIdBasket(basket.getId());
                 line.setQuantite(ligne.getQuantitee());
                 line.setTypeDeReduction(ligne.getTypeReduction());

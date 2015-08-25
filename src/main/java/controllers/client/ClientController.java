@@ -11,6 +11,7 @@ import org.springframework.web.context.request.async.DeferredResult;
 import persistence.beans.biz.Client;
 
 import javax.validation.Valid;
+import javax.ws.rs.PathParam;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,7 +53,7 @@ public class ClientController {
             client.setVille(request.getVille());
             client.save().subscribe();
             logger.info("création du client "+client.getId());
-            result.setResult(new ClientResponse(client.getId(),request.getNom(),request.getPrenom()));
+            result.setResult(new ClientResponse(String.valueOf(client.getId()),request.getNom(),request.getPrenom(), 0));
 
 //        });
 
@@ -77,7 +78,7 @@ public class ClientController {
         Client.getList().subscribe(list -> {
             if (list != null && !list.isEmpty()) {
                 for (Client cl : list) {
-                    ClientResponse resp = new ClientResponse(cl.getId(),cl.getNom(),cl.getPrenom());
+                    ClientResponse resp = new ClientResponse(String.valueOf(cl.getId()), cl.getNom(), cl.getPrenom(), cl.getPointsFidelite());
                     clients.add(resp);
                 }
             }
@@ -86,6 +87,31 @@ public class ClientController {
         logger.info(clients.size()+" clients trouvés");
 
         result.setResult(new ClientListResponse(clients));
+
+//        });
+
+        return result;
+    }
+
+    /**
+     * liste des contacts
+     *
+     * @return
+     * @throws Exception
+     */
+    @RequestMapping(value = "/{idContact}", method = GET)
+    public @ResponseBody
+    DeferredResult<ClientResponse> getContact(@PathVariable(value = "idContact") long idContact) {
+
+        DeferredResult<ClientResponse> result = new TiskaDeferredResult<>();
+
+//        GeneratorRuntime.getGeneratorRuntime().executeTransaction(() -> {
+
+        Client cl = Client.getById(idContact).toBlocking().single().get();
+
+        logger.info("client trouvé");
+
+        result.setResult(new ClientResponse(String.valueOf(cl.getId()), cl.getNom(), cl.getPrenom(), cl.getPointsFidelite()));
 
 //        });
 

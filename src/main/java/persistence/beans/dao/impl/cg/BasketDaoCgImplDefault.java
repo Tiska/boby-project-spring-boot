@@ -287,32 +287,32 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 		 * Objet representant la colonne ID_CLIENT (propriete idClient) a utiliser dans les requetes.
 		 */
 		@Deprecated
-		public static final QueryColumn idClient = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, null, long.class);
+		public static final QueryColumn idClient = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, null, java.lang.Long.class);
 		/**
 		 * Objet representant la colonne ID_CLIENT (propriete idClient) aggregee par la fonction min() a utiliser dans les requetes.
 		 */
 		@Deprecated
-		public static final QueryColumn idClientMIN = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.MIN, long.class);
+		public static final QueryColumn idClientMIN = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.MIN, java.lang.Long.class);
 		/**
 		 * Objet representant la colonne ID_CLIENT (propriete idClient) aggregee par la fonction max') a utiliser dans les requetes.
 		 */
 		@Deprecated
-		public static final QueryColumn idClientMAX = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.MAX, long.class);
+		public static final QueryColumn idClientMAX = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.MAX, java.lang.Long.class);
 		/**
 		 * Objet representant la colonne ID_CLIENT (propriete idClient) aggregee par la fonction count() a utiliser dans les requetes.
 		 */
 		@Deprecated
-		public static final QueryColumn idClientCOUNT = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.COUNT, long.class);
+		public static final QueryColumn idClientCOUNT = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.COUNT, java.lang.Long.class);
 		/**
 		 * Objet representant la colonne ID_CLIENT (propriete idClient) aggregee par la fonction sum() a utiliser dans les requetes.
 		 */
 		@Deprecated
-		public static final QueryColumn idClientSUM = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.SUM, long.class);
+		public static final QueryColumn idClientSUM = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.SUM, java.lang.Long.class);
 		/**
 		 * Objet representant la colonne ID_CLIENT (propriete idClient) aggregee par la fonction avg() a utiliser dans les requetes.
 		 */
 		@Deprecated
-		public static final QueryColumn idClientAVG = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.AVG, long.class);
+		public static final QueryColumn idClientAVG = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.AVG, java.lang.Long.class);
 		/**
 		 * Objet representant la colonne DATE_PAIEMENT (propriete datePaiement) a utiliser dans les requetes.
 		 */
@@ -499,44 +499,51 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 				private QueryColumn columnIdClient = null;
 				public QueryColumn getIdClient(){
 					if( columnIdClient == null ){
-						columnIdClient = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, null, long.class);
+						columnIdClient = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, null, java.lang.Long.class);
 					}
 					return columnIdClient;
 				}
 				private QueryColumn columnIdClientMIN = null;
 				public QueryColumn getIdClientMIN(){
 					if( columnIdClientMIN == null ){
-						columnIdClientMIN = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.MIN, long.class);
+						columnIdClientMIN = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.MIN, java.lang.Long.class);
 					}
 					return columnIdClientMIN;
 				}
 				private QueryColumn columnIdClientMAX = null;
 				public QueryColumn getIdClientMAX(){
 					if( columnIdClientMAX == null ){
-						columnIdClientMAX = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.MAX, long.class);
+						columnIdClientMAX = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.MAX, java.lang.Long.class);
 					}
 					return columnIdClientMAX;
 				}
 				private QueryColumn columnIdClientCOUNT = null;
 				public QueryColumn getIdClientCOUNT(){
 					if( columnIdClientCOUNT == null ){
-						columnIdClientCOUNT = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.COUNT, long.class);
+						columnIdClientCOUNT = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.COUNT, java.lang.Long.class);
 					}
 					return columnIdClientCOUNT;
 				}
 				private QueryColumn columnIdClientSUM = null;
 				public QueryColumn getIdClientSUM(){
 					if( columnIdClientSUM == null ){
-						columnIdClientSUM = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.SUM, long.class);
+						columnIdClientSUM = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.SUM, java.lang.Long.class);
 					}
 					return columnIdClientSUM;
 				}
 				private QueryColumn columnIdClientAVG = null;
 				public QueryColumn getIdClientAVG(){
 					if( columnIdClientAVG == null ){
-						columnIdClientAVG = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.AVG, long.class);
+						columnIdClientAVG = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.AVG, java.lang.Long.class);
 					}
 					return columnIdClientAVG;
+				}
+				private QueryColumn columnIdClientISNULL = null;
+				public QueryColumn getIdClientISNULL(){
+					if( columnIdClientISNULL == null ){
+						columnIdClientISNULL = new JDBCQueryColumn((JDBCTableAlias<?>)ALIAS, "idClient", _FIELD_IDCLIENT, JDBCFunction.ISNULL, java.lang.Long.class);
+					}
+					return columnIdClientISNULL;
 				}
 				private QueryColumn columnDatePaiement = null;
 				public QueryColumn getDatePaiement(){
@@ -645,7 +652,11 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 					object.setTotal(rs.getInt(_FIELD_TOTAL));
 					object.setTypePayment(rs.getInt(_FIELD_TYPEPAYMENT));
 					object.setDate(rs.getTimestamp(_FIELD_DATE));
-					object.setIdClient(rs.getLong(_FIELD_IDCLIENT));
+					rs.getObject("ID_CLIENT");
+					// On affecte pas quand rs.wasNull() car vaut la valeur par defaut
+					if (!rs.wasNull()) {
+						object.setIdClient(rs.getLong(_FIELD_IDCLIENT));
+					}
 					rs.getObject("DATE_PAIEMENT");
 					// On affecte pas quand rs.wasNull() car vaut la valeur par defaut
 					if (!rs.wasNull()) {
@@ -776,7 +787,7 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 						pst.setInt(1, obj.getTotal());
 						pst.setInt(2, obj.getTypePayment());
 						pst.setTimestamp(3, obj.getDate());
-						pst.setLong(4, obj.getIdClient());
+						if (obj.getIdClient()==null) { pst.setNull(4 , -5);} else { pst.setLong(4, obj.getIdClient());}
 						if (obj.getDatePaiement()==null) { pst.setNull(5 , 93);} else { pst.setTimestamp(5, obj.getDatePaiement());}
 						fillSQLPrimaryParameters(6, pst, obj);
 						pst.executeUpdate();
@@ -892,7 +903,7 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 	 * @param idClient la valeur de la colonne idClient
 	 * @return La liste des objets correspondant aux criteres.
 	 */
-	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParIdClient(long idClient) {
+	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParIdClient(java.lang.Long idClient) {
 		return newQuery().equal(BASKET_COLUMNS.idClient, idClient).getList();
 	}
 	/**
@@ -901,7 +912,7 @@ public abstract class BasketDaoCgImplDefault implements IBasketDao {
 	 * @param idClient la valeur de la colonne idClient
 	 * @return La liste des objets correspondant aux criteres.
 	 */
-	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParDatePaiementEtIdClient(java.sql.Timestamp datePaiement, long idClient) {
+	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParDatePaiementEtIdClient(java.sql.Timestamp datePaiement, java.lang.Long idClient) {
 		return newQuery().equal(BASKET_COLUMNS.datePaiement, datePaiement).equal(BASKET_COLUMNS.idClient, idClient).getList();
 	}
 	

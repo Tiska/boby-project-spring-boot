@@ -7,11 +7,13 @@ import java.util.List;
  */
 public class PanierRequest {
 
-    private long idClient;
+    private Long idClient;
     private List<LignePanierRequest> lignesPanier;
+    private boolean usePoints;
 
-    public PanierRequest(long idClient, List<LignePanierRequest> lignesPanier) {
+    public PanierRequest(Long idClient, boolean usePoints, List<LignePanierRequest> lignesPanier) {
         this.idClient = idClient;
+        this.usePoints = usePoints;
         this.lignesPanier = lignesPanier;
     }
 
@@ -23,12 +25,20 @@ public class PanierRequest {
         this.lignesPanier = lignesPanier;
     }
 
-    public long getIdClient() {
+    public Long getIdClient() {
 
         return idClient;
     }
 
-    public void setIdClient(long idClient) {
+    public void setIdClient(Long idClient) {
         this.idClient = idClient;
+    }
+
+    public boolean isUsePoints() {
+        return usePoints;
+    }
+
+    public void setUsePoints(boolean usePoints) {
+        this.usePoints = usePoints;
     }
 }

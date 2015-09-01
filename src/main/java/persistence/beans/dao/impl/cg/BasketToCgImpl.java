@@ -159,7 +159,7 @@ public class BasketToCgImpl implements persistence.beans.dao.IBasketTo, java.io.
 		}
 		_date=date;
 	}
-	private long _idClient = -1;
+	private java.lang.Long _idClient = null;
 	/**
 	 * Obtenir la valeur de la propriete idClient.
 	 *
@@ -167,9 +167,9 @@ public class BasketToCgImpl implements persistence.beans.dao.IBasketTo, java.io.
 	 */
 	
 	@DBFieldInfos(name="ID_CLIENT")
-	@Constraint(nullable=false,primary=false,unique=false,fieldOrder=5)
+	@Constraint(nullable=true,primary=false,unique=false,fieldOrder=5)
 	@ForeignKey(name="basketIdClientToClientId", referenceTo=persistence.beans.dao.IClientTo.class, referenceDao=persistence.beans.dao.IClientDao.class, referenceListMethod="getList", referenceObjectMethod="getClient", referenceProperty="id")
-	public long getIdClient() {
+	public java.lang.Long getIdClient() {
 		return _idClient;
 	}
 	/**
@@ -177,7 +177,7 @@ public class BasketToCgImpl implements persistence.beans.dao.IBasketTo, java.io.
 	 *
 	 * @param idClient la valeur a affecter.
 	 */
-	public void setIdClient(long idClient) {
+	public void setIdClient(java.lang.Long idClient) {
 		_idClient=idClient;
 	}
 	private java.sql.Timestamp _datePaiement = null;

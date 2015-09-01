@@ -114,8 +114,11 @@ public abstract class BasketDefault {
 	 * @return persistence.beans.biz.Client
 	 */
 	
-	public Observable<persistence.beans.biz.Client> getClient() {
-		return persistence.beans.biz.Client.getClient(getTo(false).getIdClient()).map(o -> {return o.get();});
+	public Observable<Optional<persistence.beans.biz.Client>> getClient() {
+		if(getTo(false).getIdClient() == null){
+			return Observable.just(Optional.empty());
+		}
+		return persistence.beans.biz.Client.getClient(getTo(false).getIdClient());
 	}
 	
 	
@@ -125,7 +128,7 @@ public abstract class BasketDefault {
 	 * @param idClient
 	 * @return Observable<List<Basket>>
 	 */
-	public static Observable<List<Basket>> getBasketListParIdClient(long idClient) {
+	public static Observable<List<Basket>> getBasketListParIdClient(java.lang.Long idClient) {
 		return getDao().getBasketListParIdClient(idClient).map((List<IBasketTo> tos) -> Basket.toBizList(tos));
 	}
 	
@@ -135,7 +138,7 @@ public abstract class BasketDefault {
 	 * @param idClient la valeur de la colonne idClient
 	 * @return La liste des objets correspondant aux criteres.
 	 */
-	public static Observable<java.util.List<persistence.beans.biz.Basket>> getBasketListParDatePaiementEtIdClient(java.sql.Timestamp datePaiement, long idClient) {
+	public static Observable<java.util.List<persistence.beans.biz.Basket>> getBasketListParDatePaiementEtIdClient(java.sql.Timestamp datePaiement, java.lang.Long idClient) {
 		return getDao().getBasketListParDatePaiementEtIdClient(datePaiement, idClient).map((List<IBasketTo> tos) -> Basket.toBizList(tos));
 	}
 	
@@ -245,8 +248,8 @@ public abstract class BasketDefault {
 	 *
 	 * @return la valeur de la propriete idClient
 	 */
-	public long getIdClient() {
-		return getTo(true).getIdClient();
+	public Optional<Long> getIdClient() {
+		return Optional.ofNullable(getTo(true).getIdClient());
 	}
 	
 	
@@ -255,7 +258,7 @@ public abstract class BasketDefault {
 	 *
 	 * @param idClient la valeur a affecter.
 	 */
-	public void setIdClient(long idClient) {
+	public void setIdClient(Long idClient) {
 		getTo(false).setIdClient(idClient);
 	}
 	
@@ -306,7 +309,7 @@ public abstract class BasketDefault {
 		setTotal(to.getTotal());
 		setTypePayment(to.getTypePayment());
 		setDate(to.getDate());
-		setIdClient(to.getIdClient());
+		setIdClient(to.getIdClient().orElse(null));
 		setDatePaiement(to.getDatePaiement().orElse(null));
 	}
 	

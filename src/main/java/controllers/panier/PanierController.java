@@ -117,9 +117,26 @@ public class PanierController extends TiskaController{
                 total += price;
             }
 
+            if(basket.getIdClient() != null && request.isUsePoints()){
+
+                Client cl = Client.getById(basket.getIdClient().get()).toBlocking().single().get();
+
+                int nbReducPossible = cl.getPointsFidelite() % 2;
+
+                cl.setPointsFidelite(cl.getPointsFidelite() - nbReducPossible * 200);
+                cl.save().toBlocking().single();
+
+                total -= nbReducPossible * 10;
+
+            }else if(basket.getIdClient() != null && !request.isUsePoints()){
+                //ajout des points fidélitée
+                Client cl = Client.getById(basket.getIdClient().get()).toBlocking().single().get();
+                cl.setPointsFidelite(total);
+                cl.save().toBlocking().single();
+            }
+
             basket.setTotal(total);
             basket.save().toBlocking().single();
-
 
             logger.info("création d'un panier ");
             result.setResult(new ApiResponse(Status.OK.getCode(),"ok"));

@@ -26,14 +26,14 @@ interface IBasketDaoDefault {
 	 * @param idClient la valeur de la colonne idClient
 	 * @return La liste des objets correspondant aux criteres.
 	 */
-	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParIdClient(long idClient);
+	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParIdClient(java.lang.Long idClient);
 	/**
 	 * Getter lie a l'index CLIENT_DATE_PAIEMENT.
 	 * @param datePaiement la valeur de la colonne datePaiement
 	 * @param idClient la valeur de la colonne idClient
 	 * @return La liste des objets correspondant aux criteres.
 	 */
-	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParDatePaiementEtIdClient(java.sql.Timestamp datePaiement, long idClient);
+	public Observable<java.util.List<persistence.beans.dao.IBasketTo>> getBasketListParDatePaiementEtIdClient(java.sql.Timestamp datePaiement, java.lang.Long idClient);
 	
 	/**
 	 * Retourne un persistence query permettant de faire des recherche sur la classe persistence.beans.dao.IBasketTo
@@ -207,6 +207,11 @@ interface IBasketDaoDefault {
 		 * @return QueryColumn
 		 */
 		public QueryColumn getIdClientAVG();
+		/**
+		 * Objet representant la colonne ID_CLIENT (propriete idClient) aggregee par la fonction isnull() a utiliser dans les requetes.
+		 * @return QueryColumn
+		 */
+		public QueryColumn getIdClientISNULL();
 		/**
 		 * colonne DATE_PAIEMENT (propriete datePaiement) a utiliser dans les requetes.
 		 * @return QueryColumn

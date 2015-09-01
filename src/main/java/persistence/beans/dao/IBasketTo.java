@@ -69,14 +69,14 @@ public interface IBasketTo extends java.io.Serializable {
 	 *
 	 * @return la valeur de la propriete idClient
 	 */
-	public long getIdClient();
+	public Long getIdClient();
 	
 	/**
 	 * Affecte la propriete idClient.
 	 *
 	 * @param idClient la valeur a affecter.
 	 */
-	public void setIdClient(long idClient);
+	public void setIdClient(Long idClient);
 	
 	/**
 	 * Obtenir la valeur de la propriete datePaiement.
